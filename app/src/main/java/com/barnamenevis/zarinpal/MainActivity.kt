@@ -121,7 +121,7 @@ class MainActivity : ComponentActivity() {
                 // Using trailing lambda syntax for redirectUrl
                 val response = zarinPal.createPayment(request) { paymentGatewayUri, status ->
                     Log.d("ZarinPal", "Create Payment Callback: Uri=$paymentGatewayUri, Status=$status")
-                    if (status == 100 && paymentGatewayUri != null) {
+                    if (status == 100) {
                         val intent = Intent(Intent.ACTION_VIEW, Uri.parse(paymentGatewayUri))
                         startActivity(intent)
                         // We can't update UI from here if this callback is on BG thread, but startActivity is fine.
