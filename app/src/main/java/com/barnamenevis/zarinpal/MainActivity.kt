@@ -30,9 +30,9 @@ class MainActivity : ComponentActivity() {
 
     private lateinit var zarinPal: ZarinPal
     private val merchantId = "your-merchant-id" // Replace with actual Merchant ID
-    private val callbackScheme = "zarinpal"
-    private val callbackHost = "payment"
-    private val callbackUrl = "$callbackScheme://$callbackHost"
+    private val callbackScheme = "https"
+    private val callbackHost = "zarinpal.barnamenevis.com"
+    private val callbackUrl = "$callbackScheme://$callbackHost/payment"
 
     // Simple state for UI feedback
     private var paymentStatus by mutableStateOf("Ready")
