@@ -47,7 +47,7 @@ class MainActivity : ComponentActivity() {
                 Config(
                     merchantId = merchantId,
                     packageName = packageName,
-                    sandBox = true
+                    sandBox = false
                 )
             )
         } catch (e: Exception) {
