@@ -37,6 +37,14 @@ android {
     buildFeatures {
         compose = true
     }
+
+    // Force specific coroutines version to resolve class loading issues with older libraries
+    configurations.all {
+        resolutionStrategy {
+            force("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.4")
+            force("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.4")
+        }
+    }
 }
 
 dependencies {
@@ -49,6 +57,12 @@ dependencies {
     implementation(libs.androidx.compose.ui.graphics)
     implementation(libs.androidx.compose.ui.tooling.preview)
     implementation(libs.androidx.compose.material3)
+    implementation("com.github.ZarinPal:Android-SDK-Kotlin:v.1.1.2")
+
+    // Explicitly add coroutines dependencies (version is forced above)
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.4")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.4")
+
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
