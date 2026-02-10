@@ -29,7 +29,7 @@ import com.example.zarinpal.data.remote.dto.verification.PaymentVerifyRequest
 class MainActivity : ComponentActivity() {
 
     private lateinit var zarinPal: ZarinPal
-    private val merchantId = "your-merchant-id" // Replace with actual Merchant ID
+    private val merchantId = "eba77c90-ad32-4573-aff5-d5d1f4178352" // Replace with actual Merchant ID
     private val callbackScheme = "https"
     private val callbackHost = "zarinpal.barnamenevis.com"
     private val callbackUrl = "$callbackScheme://$callbackHost/payment"
